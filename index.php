@@ -1,13 +1,12 @@
 <?php
-    $conn = mysql_connect('localhost', 'root', '356@10ejccs085');    
+    $conn = mysql_connect('localhost', 'root', 'rajeev');    
     if(!$conn)
     { 
         echo "connection failed";
     }
     $connected = mysql_select_db("Ryan", $conn);
     $query = "select main_menu from page_content";
-    $result = mysql_query($query);    
-    echo $result;
+    $result = mysql_query($query);
 ?>
 <!DOCTYPE HTML>
 <html>
