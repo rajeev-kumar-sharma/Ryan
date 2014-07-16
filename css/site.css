@@ -87,6 +87,10 @@ aside {
 	color: #99417d;
 }
 
+.top_right_menu:last-child {
+    display: none;
+}
+
 
 #slider {
 	padding-top: 20px;
@@ -127,7 +131,7 @@ aside {
 }
 
 
-#img_1 {
+.img_1 {
 	border: 10px solid #E9E9E9;	
 }
 

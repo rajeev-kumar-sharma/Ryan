@@ -1,12 +1,5 @@
 <?php
-    $conn = mysql_connect('localhost', 'root', 'rajeev');    
-    if(!$conn)
-    { 
-        echo "connection failed";
-    }
-    $connected = mysql_select_db("Ryan", $conn);
-    $query = "select main_menu from page_content";
-    $result = mysql_query($query);
+    include('standard.php');    
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -21,57 +14,56 @@
 			</div>
 			<div id="toprightnav">
 				<ul>
-					<li>
-						<a href="#" title="Ryan Group">Ryan Group</a>
-					</li>
+                    <?php
+                        $ob = new db_connection();
+                        $query = "select top_right_menu from page_content";
+                        $rows = $ob->db_fetch($query);                    
+                        foreach($rows as $row)
+                        {
+                    ?>
                     <li>
+                        <a href="#" title="<?php echo $row ?>"><?php echo $row ?></a>
+                    </li>
+                    <li class="top_right_menu">
                         |
                     </li>
-					<li>
-						<a href="#" title="Ryan International">Ryan International</a>
-					</li>
-                    <li>
-                        |
-                    </li>
-					<li>
-						<a href="#" title="Careers">Careers</a>
-					</li>
-                    <li>
-                        |                 
-                    </li>
-					<li>
-						<a href="#" title="Support">Support</a>
-					</li>
+                    <?php
+                        } $ob->db_disconnection();
+                    ?>
 				</ul>
 			</div>
 			<div class="fix">
 			</div>
 		</header>
 		<nav>
-            <?php                
-                while($row = mysql_fetch_array($result))
+            <?php
+                $ob = new db_connection();
+                $query = "select main_menu from page_content";
+                $rows = $ob->db_fetch($query);                    
+                foreach($rows as $row)
                 {
-                    $menu = $row['main_menu']; ?>
-                    <a href="#" title="home"><?php echo $menu ?></a>
-                <?php }
+                    ?>
+                    <a href="#" title="<?php echo $row ?>"><?php echo $row ?></a>
+                <?php } $ob->db_disconnection();
             ?>
   			  			
 		</nav>
 		<section>
 			<div id="slider">
 				<ul id="slider_list">
-					<li>
-						<a href="#" title="img1"><img id="img_1" src="images/slider_pic.jpg" alt="img1" /></a>
-					</li>
-					<li>
-						<a href="#" title="img1"><img id="img_1" src="images/slider_pic.jpg" alt="img1" /></a>
-					</li>
-					<li>
-						<a href="#" title="img1"><img id="img_1" src="images/slider_pic.jpg" alt="img1" /></a>
-					</li>
-					<li>
-						<a href="#" title="img1"><img id="img_1" src="images/slider_pic.jpg" alt="img1" /></a>
-					</li>
+                    <?php
+                        $ob = new db_connection();
+                        $query = "select slider_images from page_content";
+                        $rows = $ob->db_fetch($query);                    
+                        foreach($rows as $row)
+                        {
+                    ?>
+                    <li>
+                        <a href="#" title="Slider"><img class="img_1" src="<?php echo $row ?>" alt="Picture" /></a>
+                    </li>
+                    <?php
+                        } $ob->db_disconnection();
+                    ?>					
 				</ul>
 				<div class="controler">
 					<div class="prev"><a href="#" title="prev"><</a></div>
@@ -152,18 +144,19 @@
 						<h1 id="gallery_title">gallery</h1>
 				<div id="gallery_pic">
 					<ul>
-						<li>
-							<a href="#" title="gallery"><img src="images/gallery_pic1.jpg" alt="gallery_pic1" /></a>
-						</li>
-						<li>
-							<a href="#" title="gallery"><img src="images/gallery_pic2.jpg" alt="gallery_pic2" /></a>
-						</li>
-						<li>
-							<a href="#" title="gallery"><img src="images/gallery_pic3.jpg" alt="gallery_pic3" /></a>
-						</li>
-						<li>
-							<a href="#" title="gallery"><img src="images/gallery_pic3.jpg" alt="gallery_pic3" /></a>
-						</li>
+                        <?php
+                            $ob = new db_connection();
+                            $query = "select gallery_images from page_content";
+                            $rows = $ob->db_fetch($query);                    
+                            foreach($rows as $row)
+                            {
+                        ?>
+                        <li>
+                            <a href="#" title="galley"><img src="<?php echo $row ?>" alt="gallery_pic" /></a>
+                        </li>
+                        <?php
+                            } $ob->db_disconnection();
+                        ?>						
 					</ul>
 					<div class="prev2">
 							<a href="#" title="prev"><img src="images/arrow_lt.gif" alt="img1"/></a>
