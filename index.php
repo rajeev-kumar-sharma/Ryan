@@ -6,8 +6,7 @@
     }
     $connected = mysql_select_db("Ryan", $conn);
     $query = "select main_menu from page_content";
-    $result = mysql_query($query);    
-    echo $result;
+    $result = mysql_query($query);
 ?>
 <!DOCTYPE HTML>
 <html>
