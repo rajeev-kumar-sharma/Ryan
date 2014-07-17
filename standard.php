@@ -3,7 +3,7 @@
     {
         function db_connection()
         {
-            $con = mysql_connect('localhost', 'root', '356@10ejccs085');
+            $con = mysql_connect('localhost', 'root', 'rajeev');
             $conn = mysql_select_db('Ryan',$con);
         }
         function db_fetch($query)
