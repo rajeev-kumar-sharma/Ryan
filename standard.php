@@ -24,4 +24,10 @@
             mysql_close($con);
         }
     }
+
+    /*
+        auto complete functionallity
+    */
+
+
 ?>

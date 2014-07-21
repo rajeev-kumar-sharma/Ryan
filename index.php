@@ -6,6 +6,8 @@
 	<head>
 		<title>Ryne Global School</title>
 		<link rel="stylesheet" type="text/css" href="css/site.css">
+        <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="standard.js"></script>
 	</head>
 	<body>
 		<header>
@@ -245,7 +247,8 @@
 						<li>
 							<div id="connect">
 								<div style="float: left; width: 160px;">
-								    <input type="text" placeholder="Name">
+								    <input type="text" placeholder="Name" class="states" id="searchid">
+                                    <div id="result"></div>
                                     <input type="text" placeholder="E-mail">
                                     <input type="text" placeholder="Subject">	
 								</div>
